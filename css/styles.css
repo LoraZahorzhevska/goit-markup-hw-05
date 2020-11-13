@@ -117,6 +117,8 @@ img {
 .link-footer:hover,
 .link-footer:focus {
   color: var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-footer,
@@ -194,11 +196,15 @@ img {
 .link-contact:hover,
 .link-contact:focus {
   color: var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-contact:hover .contact-icons-svg,
 .link-contact:focus .contact-icons-svg {
   fill: var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-nav:hover::after,
@@ -211,6 +217,8 @@ img {
   border-radius: 2px;
   background-color: var(--accent-color);
   margin-top: 28px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* hero */
@@ -386,6 +394,8 @@ img {
 }
 
 .work-item {
+  position: relative;
+  display: flex;
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
@@ -393,6 +403,24 @@ img {
 
 .section .work-title {
   margin-bottom: 50px;
+}
+
+.label {
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .team {
@@ -456,6 +484,8 @@ img {
 .social-icons-link:hover,
 .social-icons-link:focus {
   background-color: var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icons-svg {
@@ -468,6 +498,8 @@ img {
 .social-icons-link:hover .social-icons-svg,
 .social-icons-link:focus .social-icons-svg {
   fill: var(--white);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icons {
@@ -503,11 +535,15 @@ img {
 .clients-icons-link:hover,
 .clients-icons-link:focus {
   border: 1px solid var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icons-link:hover .clients-icons-svg,
 .clients-icons-link:focus .clients-icons-svg {
   fill: var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icons-svg {
@@ -571,4 +607,59 @@ img {
 .social-icons-link:hover,
 .social-icons-link:focus {
   background-color: var(--accent-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop .is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--white);
+  transition: transform 0.5s;
+}
+
+.is-hidden .modal {
+  transform: translate(-50%, 0%) scale(0.5);
+  transition: transform 0.5s;
+}
+
+.btn-close {
+  display: block;
+  margin-left: auto;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--white);
+  background-image: url(../images/svg/modal-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
